@@ -61,29 +61,7 @@ app.put("/update-filme/:id", (req, res) => {
         updateCommand = "UPDATE filmes_LuizBarbosa titulo = 1 WHERE id=?"
     }
 
-    if (diretor) {
-        updateCommand = "UPDATE filmes_LuizBarbosa SET diretor = 0 WHERE id=?"
-    } else {
-        updateCommand = "UPDATE filmes_LuizBarbosa diretor = ? WHERE id=?"
-    }
 
-    if (genero) {
-        updateCommand = "UPDATE filmes_LuizBarbosa SET genero = 0 WHERE id=?"
-    } else {
-        updateCommand = "UPDATE filmes_LuizBarbosa genero = ? WHERE id=?"
-    }
-
-    if(duracao) {
-        updateCommand = "UPDATE filmes_LuizBarbosa SET duracao = 0 WHERE id=?"
-    } else {
-        updateCommand = "UPDATE filmes_LuizBarbosa duracao = ? WHERE id=?"
-    }
-
-    if(classificacao_etaria) {
-        updateCommand = "UPDATE filmes_LuizBarbosa SET classificacao_etaria = 0 WHERE id=?"
-    } else {
-        updateCommand = "UPDATE filmes_LuizBarbosa classificacao_etaria = ? WHERE id=?"
-    }
 
     sql.query(updateCommand, [id], (error) => {
         if (error) {
