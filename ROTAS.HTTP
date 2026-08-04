@@ -1,0 +1,22 @@
+GET http://localhost:3000/all-filmes
+
+###
+POST http://localhost:3000/create-filme
+Content-Type: application/json
+
+{
+    "titulo": "",
+    "diretor": "",
+    "genero": "",
+    "duracao": "",
+    "classificacao_etaria": ""
+}
+###
+DELETE http://localhost:3000/delete-filme/1
+###
+PUT http://localhost:3000/update-filme/
+Content-Type: application/json
+{
+    "status": 1,
+    "id": 9
+}
