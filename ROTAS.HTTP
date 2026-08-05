@@ -1,22 +1,27 @@
 GET http://localhost:3000/all-filmes
 
 ###
-POST http://localhost:3000/create-filme
+POST http://localhost:3000/create-filmes
 Content-Type: application/json
 
 {
-    "titulo": "",
-    "diretor": "",
-    "genero": "",
-    "duracao": "",
-    "classificacao_etaria": ""
+    "titulo": "Titanic",
+    "diretor": "James Cameron",
+    "genero": "Drama / Romance",
+    "duracao": "194 min (3h 14min)",
+    "classificacao_etaria": "12 anos"
 }
 ###
-DELETE http://localhost:3000/delete-filme/1
+DELETE http://localhost:3000/delete-filmes/
 ###
-PUT http://localhost:3000/update-filme/
+PUT http://localhost:3000/update-filmes/
 Content-Type: application/json
+
 {
-    "status": 1,
-    "id": 9
+    "titulo": "Titanicnic",
+    "diretor": "James Camarao",
+    "genero": "Drama / Terror/ Romance",
+    "duracao": "194 min (3h 14min)",
+    "classificacao_etaria": "19 anos",
+    "id": 14
 }

@@ -19,12 +19,12 @@ app.get("/all-filmes", (req, res) => {
     })
 })
 
-app.post("/create-filme", (req, res) => {
-    const {titulo, genero, duracao, classificacao_etaria} = req.body
+app.post("/create-filmes", (req, res) => {
+    const {titulo, diretor, genero, duracao, classificacao_etaria} = req.body
 
-    const insertCommand = "INSERT INTO filmes_LuizBarbosa (titulo, genero, duracao, classificacao_etaria) VALUES (?, ?, ?, ?)"
+    const insertCommand = "INSERT INTO filmes_LuizBarbosa (titulo, diretor, genero, duracao, classificacao_etaria) VALUES (?, ?, ?, ?, ?)"
 
-    sql.query(insertCommand, [titulo, genero, duracao, classificacao_etaria], (error)=>{
+    sql.query(insertCommand, [titulo, diretor, genero, duracao, classificacao_etaria], (error)=>{
         if(error){
             console.log(error)
             return
@@ -34,7 +34,7 @@ app.post("/create-filme", (req, res) => {
     })
 })
 
-app.delete ("/delete-filme/:id", (req, res) => {
+app.delete ("/delete-filmes/:id", (req, res) => {
     const {id} = req.params
 
     const deleteCommand = "DELETE FROM filmes_LuizBarbosa WHERE id=?"
@@ -50,20 +50,23 @@ app.delete ("/delete-filme/:id", (req, res) => {
        }) 
 })
 
-app.put("/update-filme/:id", (req, res) => {
+app.put("/update-filmes/:id", (req, res) => {
     const {id, titulo, diretor, genero, duracao, classificacao_etaria} = req.body
 
     let updateCommand
 
-    if (titulo) {
-        updateCommand = "UPDATE filmes_LuizBarbosa SET titulo = 0 WHERE id=?"
-    } else {
-        updateCommand = "UPDATE filmes_LuizBarbosa titulo = 1 WHERE id=?"
-    }
+    updateCommand = ` 
+    UPDATE filmes_LuizBarbosa 
+        SET 
+            titulo = ?, 
+            diretor = ?, 
+            genero = ?, 
+            duracao = ?, 
+            classificacao_etaria = ? 
+        WHERE id = ?
+    `;
 
-
-
-    sql.query(updateCommand, [id], (error) => {
+    sql.query(updateCommand, [id, titulo, diretor, genero, duracao, classificacao_etaria], (error) => {
         if (error) {
             console.log(error)
             return
