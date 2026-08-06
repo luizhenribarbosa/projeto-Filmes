@@ -14,7 +14,7 @@ Content-Type: application/json
 ###
 DELETE http://localhost:3000/delete-filmes/
 ###
-PUT http://localhost:3000/update-filmes/
+PUT http://localhost:3000/update-filmes/12
 Content-Type: application/json
 
 {
@@ -22,6 +22,5 @@ Content-Type: application/json
     "diretor": "James Camarao",
     "genero": "Drama / Terror/ Romance",
     "duracao": "194 min (3h 14min)",
-    "classificacao_etaria": "19 anos",
-    "id": 14
+    "classificacao_etaria": "19 anos"
 }

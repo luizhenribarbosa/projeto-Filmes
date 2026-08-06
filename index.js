@@ -51,12 +51,11 @@ app.delete ("/delete-filmes/:id", (req, res) => {
 })
 
 app.put("/update-filmes/:id", (req, res) => {
-    const {id, titulo, diretor, genero, duracao, classificacao_etaria} = req.body
+    const { id } = req.params;
+    const { titulo, diretor, genero, duracao, classificacao_etaria } = req.body;
 
-    let updateCommand
-
-    updateCommand = ` 
-    UPDATE filmes_LuizBarbosa 
+    const updateCommand = `
+        UPDATE filmes_LuizBarbosa 
         SET 
             titulo = ?, 
             diretor = ?, 
@@ -66,16 +65,18 @@ app.put("/update-filmes/:id", (req, res) => {
         WHERE id = ?
     `;
 
-    sql.query(updateCommand, [id, titulo, diretor, genero, duracao, classificacao_etaria], (error) => {
-        if (error) {
-            console.log(error)
-            return
-        } 
-            res.json ({
-                message: "Filme atualizado com sucesso"
-            })
-    })
-})
+    sql.query(
+        updateCommand,
+        [titulo, diretor, genero, duracao, classificacao_etaria, id],
+        (error) => {
+            if (error) {
+                console.log(error);
+                return res.status(500).json({ message: "Erro ao atualizar filme" });
+            }
+            res.json({ message: "Filme atualizado com sucesso" });
+        }
+    );
+});
 
 app.listen(3000, () => {
     console.log("Servidor online")
