@@ -1,18 +1,17 @@
-GET http://localhost:3000/all-filmes
-
+GET http://localhost:3000/
 ###
 POST http://localhost:3000/create-filmes
 Content-Type: application/json
 
 {
-    "titulo": "Titanic",
-    "diretor": "James Cameron",
-    "genero": "Drama / Romance",
-    "duracao": "194 min (3h 14min)",
-    "classificacao_etaria": "12 anos"
+    "titulo": "WALL-E",
+    "diretor": "Andrew Stanton",
+    "genero": "Animação / Ficção Científica / Família",
+    "duracao": "98 min (1h 38min)",
+    "classificacao_etaria": "Livre"
 }
 ###
-DELETE http://localhost:3000/delete-filmes/
+DELETE http://localhost:3000/delete-filmes/9
 ###
 PUT http://localhost:3000/update-filmes/12
 Content-Type: application/json

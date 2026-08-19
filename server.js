@@ -5,8 +5,9 @@ import mysql2 from "mysql2"
 const app = express()
 
 app.use(express.json())
+app.use(cors())
 
-app.get("/all-filmes", (req, res) => {
+app.get("/", (req, res) => {
     const selectComand = "SELECT * FROM filmes_LuizBarbosa"
 
     sql.query(selectComand, (error, data) => {
@@ -56,14 +57,7 @@ app.put("/update-filmes/:id", (req, res) => {
 
     const updateCommand = `
         UPDATE filmes_LuizBarbosa 
-        SET 
-            titulo = ?, 
-            diretor = ?, 
-            genero = ?, 
-            duracao = ?, 
-            classificacao_etaria = ? 
-        WHERE id = ?
-    `;
+        SET titulo = ?, diretor = ?, genero = ?, duracao = ?, classificacao_etaria = ? WHERE id = ?`;
 
     sql.query(
         updateCommand,
