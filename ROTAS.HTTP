@@ -1,4 +1,4 @@
-GET https://projeto-filmes-vuzx.vercel.app/
+GET https://projeto-filmess-lac.vercel.app/
 ###
 POST http://localhost:3000/create-filmes
 Content-Type: application/json
