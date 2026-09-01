@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Filmes</title>
-    <link rel="stylesheet" href="cadastrar.css">
+    <link rel="stylesheet" href="cadastrar.css">    
 </head>
 <body>
     <header> 
@@ -13,24 +13,36 @@
     </header>
 
     <main>
-        <form id="cadastrar-form">
+        <form>
+          <div>
             <label for="titulo">Título:</label>
             <input type="text" id="titulo" name="titulo" placeholder="Escreva o título...">
+          </div>
 
+          <div>
             <label for="diretor">Diretor:</label>
             <input type="text" id="diretor" name="diretor" placeholder="Escreva o diretor...">
+          </div>
 
+          <div>
             <label for="genero">Gênero:</label>
             <input type="text" id="genero" name="genero" placeholder="Escreva o gênero...">
+          </div>
 
+          <div>
             <label for="duracao">Duração:</label>
             <input type="number" id="duracao" name="duracao" placeholder="Escreva a duração...">
+          </div>
 
+          <div>
             <label for="classificacao_etaria">Classificação Etária:</label>
             <input type="number" id="classificacao_etaria" name="classificacao_etaria" placeholder="Escreva a classificação etária...">
+          </div>
         </form>
 
             <button onclick="cadastrarFilme()">Cadastrar</button>
     </main>
+
+    <script src="cadastrar.js"></script>
 </body>
 </html>
