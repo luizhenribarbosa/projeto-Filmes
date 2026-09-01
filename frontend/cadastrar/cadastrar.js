@@ -16,7 +16,7 @@ async function cadastrarFilme() {
         duracao: duracao.valueAsNumber
     }
 
-    const resposta = await fetch("https://projeto-filmess-lac.vercel.app/create-filmes", {
+    const resposta = await fetch("https://projeto-filmess-lac.vercel.app/", {
         method: "POST",
         headers: {
             "Content-type": "application/json"
