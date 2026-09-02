@@ -1,10 +1,11 @@
 async function cadastrarFilme() {
     const titulo = document.getElementById("titulo")
     const genero = document.getElementById("genero")
-    const classificao_etaria = document.getElementById("classifcacao_etaria")
+    const classificacao_etaria = document.getElementById("classificacao_etaria")
     const duracao = document.getElementById("duracao")
+    const diretor = document.getElementById("diretor")
 
-    if (titulo.value === "" || genero.value === "" || classificao_etaria.value === "" || duracao.value === "") {
+    if (titulo.value === "" || genero.value === "" || classificacao_etaria.value === "" || duracao.value === "" || diretor.value === "") {
         alert("Preencha todos os campos!")
         return  
     }
@@ -12,8 +13,9 @@ async function cadastrarFilme() {
     const filme = {
         titulo: titulo.value,
         genero: genero.value,
-        classificao_etaria: classificao_etaria.valueAsNumber,
-        duracao: duracao.valueAsNumber
+        classificacao_etaria: classificacao_etaria.valueAsNumber,
+        duracao: duracao.valueAsNumber,
+        diretor: diretor.value
     }
 
     const resposta = await fetch("https://projeto-filmess-lac.vercel.app/create-filmes", {
