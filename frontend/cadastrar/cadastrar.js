@@ -1,8 +1,8 @@
 async function cadastrarFilme() {
-    const titulo = document.getElementById("title")
-    const genero = document.getElementById("gender")
-    const classificao_etaria = document.getElementById("ageLimit")
-    const duracao = document.getElementById("duration")
+    const titulo = document.getElementById("titulo")
+    const genero = document.getElementById("genero")
+    const classificao_etaria = document.getElementById("classifcacao_etaria")
+    const duracao = document.getElementById("duracao")
 
     if (titulo.value === "" || genero.value === "" || classificao_etaria.value === "" || duracao.value === "") {
         alert("Preencha todos os campos!")
