@@ -12,12 +12,11 @@ async function buscarFilmes() {
                         <p><strong>Gênero:</strong> ${filme.genero}</p>
                         <p><strong>Duração:</strong> ${filme.duracao} minutos</p>
                         <p><strong>Classificação indicativa:</strong> ${filme.classificacao_etaria > 0 ? filme.classificacao_etaria + ' anos' : 'Livre'}</p>
+                        <button onclick="apagarFilme(${filme.id})">Apagar Filme</button>
                     </div>
                 `
     })
 }
-
-buscarFilmes()
 
 async function apagarFilme(id) {
     const respostaDeSucessoAoApagar = await fetch(`https://projeto-filmess-lac.vercel.app/delete-filmes/${id}`, { method: "DELETE" })
@@ -27,3 +26,6 @@ async function apagarFilme(id) {
 
     window.location.reload()
 }
+
+buscarFilmes()
+
