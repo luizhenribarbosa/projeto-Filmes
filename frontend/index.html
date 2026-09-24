@@ -1,17 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filmes</title>
+    <title>CineFlix</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Filmes</h1>
-        <a href="./cadastrar/cadastrar.html">Cadastrar Filme</a>
+    <header class="topo">
+        <div class="topo-conteudo">
+            <div class="logo-wrap">
+                <span class="logo-badge">🎬</span>
+                <h1>CineFlix</h1>
+            </div>
+            <a class="botao-acao" href="./cadastrar/cadastrar.html">Cadastrar Filme</a>
+        </div>
     </header>
-        <section class="filmes"></section>
+
+    <main class="pagina-principal">
+        <section class="banner">
+            <p class="etiqueta">Catálogo em destaque</p>
+            <h2>Explore os melhores filmes</h2>
+            <p>Descubra clássicos, favoritos do cinema e lançamentos em um só lugar.</p>
+        </section>
+
+        <section class="filmes" aria-label="Lista de filmes"></section>
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,32 +1,211 @@
+:root {
+    --bg: #0b0d12;
+    --bg-soft: #141922;
+    --card: rgba(18, 22, 31, 0.95);
+    --card-border: rgba(255, 210, 110, 0.35);
+    --text: #f5f7fb;
+    --muted: #b9c0d0;
+    --gold: #f5c76b;
+    --gold-strong: #dca93b;
+    --red: #e53935;
+    --red-dark: #b71c1c;
+    --blue: #4f8df7;
+    --shadow: rgba(0, 0, 0, 0.35);
+}
+
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    }
-    
-    h1 {
-    text-align: center;
-    }
-    
-    .filmes {
+}
+
+body {
+    background:
+        radial-gradient(circle at top, rgba(245, 199, 107, 0.12), transparent 30%),
+        linear-gradient(180deg, #07090d 0%, #0d1118 40%, #090b10 100%);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+header {
+    background: rgba(9, 12, 18, 0.9);
+    border-bottom: 1px solid rgba(245, 199, 107, 0.2);
+    box-shadow: 0 12px 28px var(--shadow);
+}
+
+.topo-conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+}
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-badge {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--gold-strong));
+    color: #1b1200;
+    font-size: 1.5rem;
+    box-shadow: 0 0 20px rgba(245, 199, 107, 0.45);
+}
+
+h1 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.botao-acao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-strong));
+    color: #140d01;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 10px 25px rgba(245, 199, 107, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.botao-acao:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(245, 199, 107, 0.45);
+}
+
+.pagina-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px 50px;
+}
+
+.banner {
+    background: linear-gradient(135deg, rgba(245, 199, 107, 0.12), rgba(229, 57, 53, 0.12));
+    border: 1px solid var(--card-border);
+    border-radius: 22px;
+    padding: 28px;
+    margin-bottom: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.etiqueta {
+    display: inline-block;
+    color: var(--gold);
+    background: rgba(245, 199, 107, 0.12);
+    border: 1px solid rgba(245, 199, 107, 0.25);
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.banner h2 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    margin-bottom: 10px;
+}
+
+.banner p:last-child {
+    color: var(--muted);
+    font-size: 1.02rem;
+}
+
+.filmes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
-    }
-    
-    div {
-    border: 1px solid black;
-    width: 300px;
-    height: 200px;
-    padding: 10px;
+}
+
+.filmes > div {
+    background: linear-gradient(180deg, rgba(22, 27, 36, 0.98), rgba(14, 18, 25, 0.98));
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 18px 18px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 270px;
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.filmes > div:hover {
+    transform: translateY(-4px);
+    border-color: rgba(245, 199, 107, 0.6);
+}
+
+.filmes h2 {
+    margin-bottom: 12px;
+    color: var(--gold);
+    font-size: 1.5rem;
+}
+
+.filmes p {
+    color: var(--muted);
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.filmes strong {
+    color: var(--text);
+}
+
+.botoes-filme {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.botao-filme {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 12px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    flex: 1;
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.botao-filme:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+.botao-apagar {
+    background: linear-gradient(135deg, var(--red), var(--red-dark));
+}
+
+.botao-editar {
+    background: linear-gradient(135deg, var(--blue), #285dd3);
+}
+
+@media (max-width: 640px) {
+    .topo-conteudo {
+        flex-direction: column;
+        gap: 16px;
     }
 
-    header {
-        background: rgb(253, 60, 60);
-        padding: 20px;
-        color: white;
-        margin-bottom: 10px;
-    
-        a {
-            color: white;
-        }
+    .botoes-filme {
+        flex-direction: column;
     }
+
+    .banner {
+        padding: 22px 18px;
+    }
+}

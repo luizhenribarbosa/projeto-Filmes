@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,40 +7,42 @@
     <link rel="stylesheet" href="cadastrar.css">
 </head>
 <body>
-    <header> 
-        <a href="../index.html"> Voltar</a>
-        <h1>Cadastrar novos filmes</h1>
+    <header class="topo-cadastro">
+        <div class="topo-cadastro-conteudo">
+            <a class="voltar" href="../index.html">← Voltar</a>
+            <h1>Cadastrar novos filmes</h1>
+        </div>
     </header>
 
-    <main>
-        <form>
-          <div>
+    <main class="formulario-container">
+        <form class="formulario-filme">
+          <div class="campo">
             <label for="titulo">Título:</label>
             <input type="text" id="titulo" name="titulo" placeholder="Escreva o título...">
           </div>
 
-          <div>
+          <div class="campo">
             <label for="diretor">Diretor:</label>
             <input type="text" id="diretor" name="diretor" placeholder="Escreva o diretor...">
           </div>
 
-          <div>
+          <div class="campo">
             <label for="genero">Gênero:</label>
             <input type="text" id="genero" name="genero" placeholder="Escreva o gênero...">
           </div>
 
-          <div>
+          <div class="campo">
             <label for="duracao">Duração:</label>
             <input type="number" id="duracao" name="duracao" placeholder="Escreva a duração...">
           </div>
 
-          <div>
+          <div class="campo">
             <label for="classificacao_etaria">Classificação Etária:</label>
             <input type="number" id="classificacao_etaria" name="classificacao_etaria" placeholder="Escreva a classificação etária...">
           </div>
-        </form>
 
-            <button onclick="cadastrarFilme()">Cadastrar</button>
+          <button class="botao-cadastrar" type="button" onclick="cadastrarFilme()">Cadastrar</button>
+        </form>
     </main>
 
     <script src="cadastrar.js"></script>
