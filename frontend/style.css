@@ -167,32 +167,35 @@ h1 {
 
 .botoes-filme {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     margin-top: 18px;
 }
 
 .botao-filme {
     border: none;
-    border-radius: 10px;
-    padding: 10px 12px;
+    border-radius: 8px;
+    padding: 8px 10px;
     color: white;
     font-weight: 700;
     cursor: pointer;
     flex: 1;
-    transition: filter 0.2s ease, transform 0.2s ease;
+    font-size: 0.78rem;
+    transition: filter 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
 }
 
 .botao-filme:hover {
-    filter: brightness(1.1);
+    filter: brightness(1.08);
     transform: translateY(-1px);
 }
 
 .botao-apagar {
-    background: linear-gradient(135deg, var(--red), var(--red-dark));
+    background: linear-gradient(135deg, #f44336, #c62828);
 }
 
 .botao-editar {
-    background: linear-gradient(135deg, var(--blue), #285dd3);
+    background: linear-gradient(135deg, #f5c76b, #d7a63d);
+    color: #1a1200;
 }
 
 @media (max-width: 640px) {
