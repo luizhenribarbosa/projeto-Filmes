@@ -3,29 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CineFlix</title>
+    <title>Cinehouse</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="topo">
-        <div class="topo-conteudo">
-            <div class="logo-wrap">
-                <span class="logo-badge">🎬</span>
-                <h1>CineFlix</h1>
+    <div class="page-shell">
+        <header class="site-header">
+            <div class="container nav">
+                <div class="brand">
+                    <span class="brand-mark"></span>
+                    <div>
+                        <p class="eyebrow">Catálogo</p>
+                        <h1>Cinehouse</h1>
+                    </div>
+                </div>
+
+                <a href="./cadastrar/cadastrar.html" class="primary-button">Cadastrar filme</a>
             </div>
-            <a class="botao-acao" href="./cadastrar/cadastrar.html">Cadastrar Filme</a>
-        </div>
-    </header>
+        </header>
 
-    <main class="pagina-principal">
-        <section class="banner">
-            <p class="etiqueta">Catálogo em destaque</p>
-            <h2>Explore os melhores filmes</h2>
-            <p>Descubra clássicos, favoritos do cinema e lançamentos em um só lugar.</p>
-        </section>
+        <main class="container main-content">
+            <section class="hero-panel">
+                <div class="hero-copy">
+                    <p class="section-kicker">Biblioteca</p>
+                    <h2>Descubra seu próximo favorito.</h2>
+                    <p>Uma vitrine com filmes, gêneros e detalhes essenciais para organizar sua coleção.</p>
+                </div>
+            </section>
 
-        <section class="filmes" aria-label="Lista de filmes"></section>
-    </main>
+            <section class="movie-grid" id="movieGrid" aria-live="polite"></section>
+        </main>
+    </div>
 
     <script src="script.js"></script>
 </body>

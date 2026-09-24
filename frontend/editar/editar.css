@@ -1,0 +1,188 @@
+:root {
+    --bg: #090d13;
+    --bg-soft: #101822;
+    --panel: rgba(16, 22, 31, 0.88);
+    --panel-strong: rgba(17, 24, 35, 0.98);
+    --panel-alt: #141d27;
+    --border: rgba(245, 205, 117, 0.18);
+    --text: #edf3ff;
+    --muted: #a6afc0;
+    --gold: #f5c76b;
+    --gold-strong: #d7a63d;
+    --shadow: rgba(0, 0, 0, 0.38);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, rgba(245, 199, 107, 0.12), transparent 22%),
+        linear-gradient(180deg, #070a10 0%, #0c1118 48%, #090d13 100%);
+    color: var(--text);
+}
+
+button,
+input,
+a {
+    font: inherit;
+}
+
+.container {
+    width: min(1100px, calc(100% - 32px));
+    margin: 0 auto;
+}
+
+.site-header {
+    border-bottom: 1px solid var(--border);
+    background: rgba(8, 11, 16, 0.8);
+    backdrop-filter: blur(18px);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 90px;
+    gap: 12px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.brand-mark {
+    width: 18px;
+    height: 18px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-strong));
+    box-shadow: 0 0 18px rgba(245, 199, 107, 0.42);
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: clamp(1.5rem, 2vw, 2.2rem);
+    letter-spacing: 0.05em;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 0;
+    border-radius: 12px;
+    padding: 12px 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.primary-button {
+    background: linear-gradient(135deg, var(--gold), var(--gold-strong));
+    color: #120d04;
+    box-shadow: 0 12px 26px rgba(245, 199, 107, 0.22);
+}
+
+.secondary-button {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.form-shell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 90px);
+    padding: 32px 0 56px;
+}
+
+.form-card {
+    width: min(100%, 620px);
+    background: linear-gradient(180deg, rgba(19, 27, 35, 0.96), rgba(12, 18, 25, 0.96));
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px 22px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.24);
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.field-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+label {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text);
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--muted);
+}
+
+input:focus {
+    border-color: rgba(245, 199, 107, 0.7);
+    box-shadow: 0 0 0 3px rgba(245, 199, 107, 0.12);
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.form-actions > * {
+    flex: 1;
+}
+
+@media (max-width: 640px) {
+    .nav {
+        flex-direction: column;
+        justify-content: center;
+        padding: 18px 0;
+    }
+
+    .field-row,
+    .form-actions {
+        grid-template-columns: 1fr;
+        display: grid;
+    }
+
+    .form-card {
+        padding: 20px 16px;
+    }
+}

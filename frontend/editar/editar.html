@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Filme</title>
+    <link rel="stylesheet" href="editar.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <div class="brand">
+                <span class="brand-mark"></span>
+                <div>
+                    <p class="eyebrow">Edição</p>
+                    <h1>Editar filme</h1>
+                </div>
+            </div>
+
+            <a href="../index.html" class="secondary-button">Voltar</a>
+        </div>
+    </header>
+
+    <main class="container form-shell">
+        <form id="formEditar" class="form-card">
+            <div class="field-group">
+                <label for="titulo">Título</label>
+                <input id="titulo" name="titulo" type="text" placeholder="Digite o título" required>
+            </div>
+
+            <div class="field-group">
+                <label for="diretor">Diretor</label>
+                <input id="diretor" name="diretor" type="text" placeholder="Digite o diretor" required>
+            </div>
+
+            <div class="field-group">
+                <label for="genero">Gênero</label>
+                <input id="genero" name="genero" type="text" placeholder="Digite o gênero" required>
+            </div>
+
+            <div class="field-row">
+                <div class="field-group">
+                    <label for="duracao">Duração</label>
+                    <input id="duracao" name="duracao" type="number" min="1" placeholder="Em minutos" required>
+                </div>
+
+                <div class="field-group">
+                    <label for="classificacao_etaria">Classificação</label>
+                    <input id="classificacao_etaria" name="classificacao_etaria" type="number" min="0" max="18" placeholder="Ex.: 12" required>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="primary-button">Salvar alterações</button>
+                <a href="../index.html" class="secondary-button">Cancelar</a>
+            </div>
+        </form>
+    </main>
+
+    <script src="editar.js"></script>
+</body>
+</html>
